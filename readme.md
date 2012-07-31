@@ -33,7 +33,7 @@ The directory [*sampleImages*][sampleImages] contains one sample image for each 
 ## Known issues
 *JPX* images that were create in *Photoshop* using *Adobe*'s *JPEG 2000* plugin wil be identified as *JP2*. This is because the plugin inserts a wrong value in the 'brand' field of these files. This is simply a bug in the plugin and not a fault of these signatures.    
 
-----
+##Image attribution
 
 <sup>*</sup>Created from the following source image: 
 
@@ -59,12 +59,14 @@ Public Domain.
 [IrfanView]:http://www.irfanview.com/
 [OpenJPEG]:http://www.openjpeg.org/
 
-[sampleJP2]:./sampleImages/balloon.jp2
-[sampleJPX]:./sampleImages/balloon.jpf
-[sampleJPM]:./sampleImages/balloon.jpm
-[sampleMJ2]:./sampleImages/Speedway.mj2
-[sampleImages]:./sampleImages/
-[magic]:./magic/
 
-[magicUncompiled]:./magic/jpeg2000Magic
-[magicCompiled]:./magic/jpeg2000Magic.mgc
+
+[sampleJP2]:https://github.com/bitsgalore/jp2kMagic/tree/master/sampleImages/balloon.jp2
+[sampleJPX]:https://github.com/bitsgalore/jp2kMagic/tree/master/sampleImages/balloon.jpf
+[sampleJPM]:https://github.com/bitsgalore/jp2kMagic/tree/master/sampleImages/balloon.jpm
+[sampleMJ2]:https://github.com/bitsgalore/jp2kMagic/tree/master/sampleImages/Speedway.mj2
+[sampleImages]:https://github.com/bitsgalore/jp2kMagic/tree/master/sampleImages/
+[magic]:https://github.com/bitsgalore/jp2kMagic/tree/master/magic/
+
+[magicUncompiled]:https://github.com/bitsgalore/jp2kMagic/tree/master/magic/jpeg2000Magic
+[magicCompiled]:https://github.com/bitsgalore/jp2kMagic/tree/master/magic/jpeg2000Magic.mgc
