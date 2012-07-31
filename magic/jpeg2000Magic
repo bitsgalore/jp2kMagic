@@ -1,0 +1,17 @@
+# From: Johan van der Knijff <johan.vanderknijff@kb.nl>, modified from
+# David Santinoli <david@santinoli.com>
+#
+# Modifications: added sub-entries for JP2, JPX, JPM and MJ2 formats; added mimetypes
+#
+# First look for generic JPEG 2000 signature (which identifies it as belonging to the JPEG 2000
+# file format family); then establish the sub-format from value of 'Brand' field
+0	string		\x00\x00\x00\x0C\x6A\x50\x20\x20\x0D\x0A\x87\x0A	JPEG 2000
+# Now read value of 'Brand' field, which yields a few possibilities:
+>20	string		\x6a\x70\x32\x20							Part 1 (JP2)
+!:mime	image/jp2
+>20	string		\x6a\x70\x78\x20							Part 2 (JPX)
+!:mime	image/jpx
+>20	string		\x6a\x70\x6d\x20							Part 6 (JPM)
+!:mime	image/jpm
+>20	string		\x6d\x6a\x70\x32							Part 3 (MJ2)
+!:mime	video/mj2
