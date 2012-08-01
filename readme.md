@@ -8,11 +8,11 @@ This repository contains:
 The directory [*magic*][magic] contains the following files:
 
 + [*Magic file with JPEG 2000 signature*][magicUncompiled] (uncompiled)
-+ [*Magic file with updated JPEG 2000 signature][magicCompiled] (compiled)
++ [*Magic file with updated JPEG 2000 signature*][magicCompiled] (compiled)
 
 Note that this signature is intended as a replacement of the existing *JPEG 2000 image data* signature by David Santinoli (on which it is based). It *only* contains the new *JPEG 2000* signature (i.e. for *JP2*, *JPX*, *JPM* and *MJ2*), and does not include JPEG 2000 codestreams (for these a separate signature already exists).
 
-Also note that the signature uses a two-step process for identification: first it looks for the generic *JPEG 2000* signature (which is shared by all these formats), then it uses the *Brand* field in the *File Type Box* to establish the sub-format. If the second step yields no match (e.g. because the *Brand* field contains an unknown value or is corrupted) the identification result is simply "JPEG 2000".
+Also note that the signature uses a two-step process for identification: first it looks for the generic *JPEG 2000* signature (which is shared by all these formats), then it uses the *Brand* field in the *File Type Box* to establish the sub-format. If the second step yields no match (e.g. because the *Brand* field contains an unknown value or is corrupted) the identification result is simply "JPEG 2000" (without any sub-format information).
 
 ### Compiling on your own system
 Download the uncompiled file (`jpeg2000Magic`) and compile it using:
