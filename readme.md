@@ -1,16 +1,18 @@
 ## Contents of this repository
 This repository contains:
 
-1. Updated *magic* signatures for the *JPEG 2000* family of file formats. This allows *File* to distinguish between the *JP2*, *JPX*, *JPM* and *MJ2* formats. 
+1. Updated *magic* signature for the *JPEG 2000* family of file formats. This allows *File* to distinguish between the *JP2*, *JPX*, *JPM* and *MJ2* formats. 
 2. A small set of sample images that represent each of the above formats.
 
-##*Magic* signatures
+##*Magic* signature
 The directory [*magic*][magic] contains the following files:
 
-+ [*Magic file with JPEG 2000 signatures*][magicUncompiled] (uncompiled)
-+ [*Magic file with updated JPEG 2000 signatures*][magicCompiled] (compiled)
++ [*Magic file with JPEG 2000 signature*][magicUncompiled] (uncompiled)
++ [*Magic file with updated JPEG 2000 signature][magicCompiled] (compiled)
 
-Note that these signatures are intended as a replacement of the existing *JPEG 2000 image data* signature by David Santinoli (on which it is based). They *only* contain the new *JPEG 2000* signatures (i.e. the ones for *JP2*, *JPX*, *JPM* and *MJ2*), and do not include a signature for JPEG 2000 codestreams (this already exists).
+Note that this signature is intended as a replacement of the existing *JPEG 2000 image data* signature by David Santinoli (on which it is based). It *only* contains the new *JPEG 2000* signature (i.e. for *JP2*, *JPX*, *JPM* and *MJ2*), and does not include JPEG 2000 codestreams (for these a separate signature already exists).
+
+Also note that the signature uses a two-step process for identification: first it looks for the generic *JPEG 2000* signature (which is shared by all these formats), then it uses the *Brand* field in the *File Type Box* to establish the sub-format. If the second step yields no match (e.g. because the *Brand* field contains an unknown value or is corrupted) the identification result is simply "JPEG 2000".
 
 ### Compiling on your own system
 Download the uncompiled file (`jpeg2000Magic`) and compile it using:
@@ -36,7 +38,7 @@ Note that the standard file extension of *JPX* files is `.jpf` (section M.2.1 of
 > should be given the file extension ".jpf" (readers should allow mixed case).
 
 ## Known issues
-*JPX* images that were created in *Photoshop* using *Adobe*'s *JPEG 2000* plugin wil be identified as *JP2*. This is because the plugin inserts a wrong value in the 'brand' field of these files. This is simply a bug in the plugin and not a fault of these signatures.    
+*JPX* images that were created in *Photoshop* using *Adobe*'s *JPEG 2000* plugin wil be identified as *JP2*. This is because the plugin inserts a wrong value in the 'brand' field of these files. This is simply a bug in the plugin and not a fault of this signature.    
 
 ##Image attribution
 
