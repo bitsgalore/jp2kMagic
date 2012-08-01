@@ -30,8 +30,13 @@ The directory [*sampleImages*][sampleImages] contains one sample image for each 
 
 + [*Speedway.mj2*][sampleMJ2] - [JPEG 2000 Part 3][MJ2] (MJ2) video (aka "motion JPEG 2000"), created using [OpenJPEG][OpenJPEG] <sup>\#</sup>
 
+Note that the standard file extension of *JPX* files is `.jpf` (section M.2.1 of the [specification][JPX]):
+
+> When stored in traditional computer file systems, JPX files
+> should be given the file extension ".jpf" (readers should allow mixed case).
+
 ## Known issues
-*JPX* images that were create in *Photoshop* using *Adobe*'s *JPEG 2000* plugin wil be identified as *JP2*. This is because the plugin inserts a wrong value in the 'brand' field of these files. This is simply a bug in the plugin and not a fault of these signatures.    
+*JPX* images that were created in *Photoshop* using *Adobe*'s *JPEG 2000* plugin wil be identified as *JP2*. This is because the plugin inserts a wrong value in the 'brand' field of these files. This is simply a bug in the plugin and not a fault of these signatures.    
 
 ##Image attribution
 
