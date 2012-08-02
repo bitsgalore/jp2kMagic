@@ -22,11 +22,11 @@
 #
 #
 # 2. JPEG 2000 Codestream
-# Modified from Petr Splichal <psplicha@redhat.com>
+#  modified from original entry by Petr Splichal <psplicha@redhat.com>
 #
 # Modifications: 
 # 1. Removed last byte from Petr's entry (was x00), which is part of Lsiz field and may
 #    actually have non-zero value! 
 # 2. Renamed descriptor to JPEG 2000 Codestream (was JPEG-2000 Code Stream Bitmap data)
-#    There's no mimetype fior codestreams 
+#    There's no mimetype for codestreams 
 0	string	\xff\x4f\xff\x51			JPEG 2000 Codestream
