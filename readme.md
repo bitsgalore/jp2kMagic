@@ -10,7 +10,7 @@ The directory [*magic*][magic] contains the following files:
 + [*Magic file with JPEG 2000 signature*][magicUncompiled] (uncompiled)
 + [*Magic file with updated JPEG 2000 signature*][magicCompiled] (compiled)
 
-Note that these signatures are intended as a replacement of the existing *JPEG 2000 image data* signature by David Santinoli (on which it is based), and the *JPEG-2000 Code Stream Bitmap data* signature by Petr Splichal (which ended with an `\x00` byte that shouldn't be included as this byte is part of a variable (*Lsiz*).
+Note that these signatures are intended as a replacement of the existing *JPEG 2000 image data* signature by David Santinoli (on which it is based), and the *JPEG-2000 Code Stream Bitmap data* signature by Petr Splichal, which ended with an `\x00` byte that shouldn't be included as this byte is part of a variable (*Lsiz*).
 
 Also note that the first signature uses a two-step process for identification: first it looks for the generic *JPEG 2000* signature (which is shared by all these formats), then it uses the *Brand* field in the *File Type Box* to establish the sub-format. If the second step yields no match (e.g. because the *Brand* field contains an unknown value or is corrupted) the identification result is simply "JPEG 2000" (without any sub-format information).
 
