@@ -1,7 +1,11 @@
-# From: Johan van der Knijff <johan.vanderknijff@kb.nl>, modified from
-# David Santinoli <david@santinoli.com>
+# From: Johan van der Knijff <johan.vanderknijff@kb.nl>
 #
-# Modifications: added sub-entries for JP2, JPX, JPM and MJ2 formats; added mimetypes
+# JPEG 2000 formats + codestreams
+# 
+# 1. JPEG 2000 formats:  JP2, JPX, JPM and MJ2
+#   modified from original entry by David Santinoli <david@santinoli.com>
+#
+#  Modifications: added sub-entries for JP2, JPX, JPM and MJ2 formats; added mimetypes
 #
 # First look for generic JPEG 2000 signature (which identifies it as belonging to the JPEG 2000
 # file format family); then establish the sub-format from value of 'Brand' field
@@ -15,3 +19,14 @@
 !:mime	image/jpm
 >20	string		\x6d\x6a\x70\x32							Part 3 (MJ2)
 !:mime	video/mj2
+#
+#
+# 2. JPEG 2000 Codestream
+# Modified from Petr Splichal <psplicha@redhat.com>
+#
+# Modifications: 
+# 1. Removed last byte from Petr's entry (was x00), which is part of Lsiz field and may
+#    actually have non-zero value! 
+# 2. Renamed descriptor to JPEG 2000 Codestream (was JPEG-2000 Code Stream Bitmap data)
+#    There's no mimetype fior codestreams 
+0	string	\xff\x4f\xff\x51			JPEG 2000 Codestream
