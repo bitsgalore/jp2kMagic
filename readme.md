@@ -4,7 +4,7 @@ This repository contains:
 1. Updated *magic* signatures for the *JPEG 2000* family of file formats, and *JPEG 2000* codestreams. This allows *File* to distinguish between the *JP2*, *JPX*, *JPM* and *MJ2* formats. 
 2. A small set of sample images that represent each of the above formats.
 
-##*Magic* signature
+## *Magic* signature
 The directory [*magic*][magic] contains the following files:
 
 + [*Magic file with JPEG 2000 signature*][magicUncompiled] (uncompiled)
@@ -21,7 +21,7 @@ Download the uncompiled file (`jpeg2000Magic`) and compile it using:
 
 This should produce a compiled *magic* file called `jpeg2000Magic.mgc` which can be used as input to *File* by using its `-m` switch.
 
-##JPEG 2000 sample images
+## JPEG 2000 sample images
 The directory [*sampleImages*][sampleImages] contains one sample image for each of the *JPEG 2000* file formats:
 
 + [*balloon.jp2*][sampleJP2] - [JPEG 2000 Part 1][JP2] (JP2) image, created using [Aware JPEG 2000 SDK][Aware] <sup>*</sup>
@@ -45,7 +45,7 @@ Stand-alone *JPEG 2000* codestreams are pretty rare (they're usually embedded wi
 ## Known issues
 *JPX* images that were created in *Photoshop* using *Adobe*'s *JPEG 2000* plugin wil be identified as *JP2*. This is because the plugin inserts a wrong value in the 'brand' field of these files. This is simply a bug in the plugin and not a fault of this signature.    
 
-##Image attribution
+## Image attribution
 
 <sup>*</sup>Created from the following source image: 
 
